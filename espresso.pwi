@@ -1,0 +1,38 @@
+&CONTROL
+   calculation      = 'relax'
+   verbosity        = 'high'
+   restart_mode     = 'from_scratch'
+   nstep            = 500
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = './'
+   prefix           = ' '
+   etot_conv_thr    = 0.01
+   forc_conv_thr    = 0.002
+   pseudo_dir       = '~/application/Pseudo'
+   tefield          = .true.
+   dipfield         = .true.
+/
+&SYSTEM
+   ecutwfc          = 40
+   ecutrho          = 400
+   occupations      = 'smearing'
+   degauss          = 0.005
+   nspin            = 1
+   input_dft        = 'RPBE'
+   edir             = 3
+   emaxpos          = 0.8
+   eopreg           = 0.02
+   eamp             = -0.00777876 # -0.00777876~0.01555752
+   ntyp             = 
+   nat              = 
+/
+&ELECTRONS
+   electron_maxstep = 500
+   conv_thr         = 1e-06
+   mixing_mode      = 'local-TF'
+   mixing_beta      = 0.3
+   mixing_ndim      = 16
+   mixing_fixed_ns  = 0
+   diagonalization  = 'david'
+/
